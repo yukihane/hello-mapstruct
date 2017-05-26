@@ -2,6 +2,7 @@ package jp.himeji_cs.hello_mapstruct.mapper;
 
 import jp.himeji_cs.hello_mapstruct.dest.CarDto;
 import jp.himeji_cs.hello_mapstruct.src.Car;
+import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
@@ -13,4 +14,7 @@ public interface CarMapper {
 
     @Mapping(source = "numberOfSeats", target = "seatCount")
     CarDto carToCarDto(Car car);
+
+    @InheritInverseConfiguration
+    Car carDtoToCar(CarDto car);
 }

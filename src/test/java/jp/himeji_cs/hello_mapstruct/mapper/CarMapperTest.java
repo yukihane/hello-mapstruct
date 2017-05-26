@@ -26,7 +26,7 @@ public class CarMapperTest {
         assertThat(carDto.getSeatCount(), is(5));
         assertThat(carDto.getType(), is("SEDAN"));
 
-        Car convCar = CarDtoMapper.INSTANCE.carDtoToCar(carDto);
+        Car convCar = CarMapper.INSTANCE.carDtoToCar(carDto);
         assertEquals(car, convCar);
     }
 
